@@ -33,9 +33,10 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # The 'security-extended' suite contains more queries,
-        # providing deeper security analysis for finding vulnerabilities.
-        queries: security-extended
+        # Use the custom query suite for a focused DOM XSS analysis.
+        queries: ./.github/codeql/dom-xss-queries.qls
+        # Specify the source root where the JS files are now located.
+        source-root: js_source
 
     # Autobuild attempts to build any compiled languages.
     # For interpreted languages like JavaScript, this step is straightforward.
