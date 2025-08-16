@@ -1,5 +1,4 @@
 # Workflow for CodeQL Security Scanning
-# Version 2: Re-submitting PR as requested.
 name: "CodeQL SAST Scan"
 
 on:
