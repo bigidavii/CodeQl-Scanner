@@ -1,5 +1,4 @@
 # Workflow for CodeQL Security Scanning
-# Version 2: Re-submitting PR as requested.
 name: "CodeQL SAST Scan"
 
 on:
@@ -34,8 +33,9 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # Use a config file to customize the CodeQL analysis.
-        config-file: ./.github/codeql-config.yml
+        # Use the 'security-extended' suite for high-precision security analysis.
+        # This suite focuses on security issues with a low false-positive rate.
+        queries: security-extended
         # Specify the source root where the JS files are located.
         source-root: js_source
 
