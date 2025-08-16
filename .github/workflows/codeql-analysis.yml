@@ -33,8 +33,9 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # Use the custom query suite to run a highly-focused XSS scan.
-        queries: ./.github/codeql/xss-queries.qls
+        # Use the 'security-extended' suite for high-precision security analysis.
+        # This suite focuses on security issues with a low false-positive rate.
+        queries: security-extended
         # Specify the source root where the JS files are located.
         source-root: js_source
 
