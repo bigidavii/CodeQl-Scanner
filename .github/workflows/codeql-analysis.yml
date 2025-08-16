@@ -33,9 +33,9 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # Use the custom query suite for a focused DOM XSS analysis.
-        queries: ./.github/codeql/dom-xss-queries.qls
-        # Specify the source root where the JS files are now located.
+        # Use a config file to customize the CodeQL analysis.
+        config-file: ./.github/codeql-config.yml
+        # Specify the source root where the JS files are located.
         source-root: js_source
 
     # Autobuild attempts to build any compiled languages.

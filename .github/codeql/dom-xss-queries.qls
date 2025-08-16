@@ -1,7 +1,0 @@
-# Custom query suite for DOM XSS analysis
-- description: "A custom set of queries to detect DOM XSS and related vulnerabilities."
-- import: javascript-security-and-quality.qls
-# You can add more specific queries here if needed.
-# For example, to focus only on cross-site scripting (CWE-079):
-# - queries:
-#   - uses: security/cwe/cwe-079
