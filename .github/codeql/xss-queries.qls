@@ -1,0 +1,14 @@
+# This query suite file selects all high-severity queries for
+# JavaScript that are tagged with 'xss'. This provides a highly
+# focused scan for Cross-Site Scripting vulnerabilities.
+
+- description: "A custom suite for high-severity XSS queries for JavaScript"
+- queries: .
+  from: codeql/javascript-queries
+  where:
+    # Select all queries that are tagged with 'xss'
+    tags.contains("xss") and
+    # and are considered "problems" (i.e., potential bugs or vulnerabilities)
+    kind == "problem" and
+    # and have a high or very-high severity
+    (problem.severity == "high" or problem.severity == "very-high")

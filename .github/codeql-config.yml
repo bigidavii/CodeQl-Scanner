@@ -1,8 +1,0 @@
-name: "High-Severity XSS Scan Configuration"
-
-# This configuration is highly filtered to only show potential
-# Cross-Site Scripting (XSS) vulnerabilities. It corresponds to CWE-079.
-# This will ignore all other warning types (e.g., code quality, other vulnerability types).
-queries:
-  - name: "Run only Cross-Site Scripting (XSS) security queries"
-    uses: security/cwe/cwe-079

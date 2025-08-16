@@ -33,8 +33,8 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # Use a config file to customize the CodeQL analysis.
-        config-file: ./.github/codeql-config.yml
+        # Use the custom query suite to run a highly-focused XSS scan.
+        queries: ./.github/codeql/xss-queries.qls
         # Specify the source root where the JS files are located.
         source-root: js_source
 
